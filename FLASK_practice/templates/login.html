@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>陈闯的个人空间</title>
+	<style>
+		body {
+			background-color: #f0f0f0;
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		
+		form {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+			width: 400px;
+			margin: 100px auto;
+			padding: 20px;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+		
+		label {
+			display: block;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		
+		input[type="password"] {
+			font-size: 18px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			font-size: 18px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+			transition: background-color 0.3s;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" action="{{ url_for('login') }}">
+		<h1>欢迎来到陈闯的个人空间，请登录</h1>
+		<label for="password">Password:</label>
+		<input type="hidden" name="method" value="POST">
+		<input type="password" id="password" name="password"><br><br>
+		<input type="submit" value="Login">
+	</form>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+</head>
+

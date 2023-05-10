@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>陈闯的个人空间</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+			background-color: #f0f0f0;
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		
+		form {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+			width: 400px;
+			margin: 100px auto;
+			padding: 20px;
+            text-align: center;
+			margin-top: 0;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+		h2 {
+			text-align: center;
+			margin-top: 0;
+		}
+		label {
+			display: block;
+			font-size: 18px;
+			margin-bottom: 10px;
+            text-align: center;
+			margin-top: 0;
+		}
+		
+		
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			font-size: 18px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+			transition: background-color 0.3s;
+            text-align: center;
+			margin-top: 0;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+        input[type='text'] {
+            width: 200px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+			margin-top: 0;
+        }
+
+        textarea[name='content'] {
+            width: 400px;
+            height: 150px;
+            border: 1px solid black;
+            text-align: center;
+			margin-top: 0;
+        }
+
+        table {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+			width: 800px;
+			margin: 50px auto;
+			padding: 20px;
+			margin-top: 0;
+		}
+		
+		table th {
+			font-size: 18px;
+			padding: 10px;
+			text-align: center;
+			background-color: #f2f2f2;
+			border-bottom: 1px solid #ccc;
+		}
+		
+		table td a {
+            color: black;
+			font-size: 16px;
+			padding: 10px;
+			text-align: center;
+			border-bottom: 1px solid #ccc;
+            text-decoration: none;
+		}
+
+    </style>
+</head>
+   
+<body>
+    <h1>Welcome, 陈闯</h1>
+    <h2>现在你可以书写博客记录你的日常了</h2>
+ 
+    <form method='POST'>
+        <div>
+            <label>Title:</label>
+            <input type='text' name='title'/>
+        </div>
+        <br>
+        <div>
+           <label>Content:</label>
+           <textarea rows='5' cols='50' name='content'></textarea>
+        </div>
+        <br><br>
+        <input type='submit' value='Submit'/>
+    </form>
+ 
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td><a href="/{{ record.id }}">{{ record.title }}</a></td>
+            <td>{{ record.author }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
